@@ -1,0 +1,15 @@
+---
+# tasks file for salt
+- name: Install SaltStack.
+  shell: wget -O - https://bootstrap.saltstack.com | sh -s -- -X -x python3
+
+- name: Remove minion id.
+  file:
+    path: /etc/salt/minion_id
+    state: absent
+
+- name: Add salt IP to hosts file
+  lineinfile:
+    dest: /etc/hosts
+    line: "{{ salt_ip }} salt"
+    state: present

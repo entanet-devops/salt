@@ -1,0 +1,15 @@
+galaxy_info:
+  author: DevOps
+  description: Install salt minon
+  company: Entanet
+
+  license: BSD
+
+  min_ansible_version: 2.4
+
+  galaxy_tags:
+    - salt
+    - system
+    - entanet
+
+dependencies: []
