@@ -13,3 +13,8 @@
     dest: /etc/hosts
     line: "{{ salt_ip }} salt"
     state: present
+
+- name: Stop salt-minion
+  service:
+    name: salt-minion
+    state: stopped
