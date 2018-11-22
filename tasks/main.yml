@@ -18,3 +18,4 @@
   service:
     name: salt-minion
     state: stopped
+    enabled: "{{ salt_enabled }}"
