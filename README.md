@@ -8,7 +8,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - entanet-devops.salt
+         - entanet_devops.salt
 
 License
 -------
