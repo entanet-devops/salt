@@ -1,5 +1,11 @@
 ---
 # tasks file for salt
+- name: Install necessary system packages
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ __necessary_system_packages }}"
+
 - name: Install SaltStack.
   shell: wget -O - https://bootstrap.saltstack.com | sh -s -- -X -x python3
 

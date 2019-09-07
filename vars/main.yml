@@ -1,2 +1,6 @@
 ---
 # vars file for salt
+
+__necessary_system_packages:
+  - wget
+
