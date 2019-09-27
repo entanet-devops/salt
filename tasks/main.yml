@@ -1,7 +1,10 @@
 ---
 # tasks file for salt
-- name: Install SaltStack.
-  shell: wget -O - https://bootstrap.saltstack.com | sh -s -- -X -x python3
+- name: Download SaltStack.
+  shell: curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
+
+- name: Install SaltStack 
+  shell: "sh bootstrap-salt.sh git {{ salt_version }}"
 
 - name: Remove minion id.
   file:
