@@ -1,10 +1,11 @@
 ---
-# tasks file for salt
-- name: Download SaltStack.
-  shell: curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
+- name: Download SaltStack
+  get_url:
+    url: https://bootstrap.saltstack.com
+    dest: /tmp/bootstrap-salt.sh
 
 - name: Install SaltStack 
-  shell: "sh bootstrap-salt.sh git {{ salt_version }}"
+  shell: "sh /tmp/bootstrap-salt.sh -P stable {{ salt_version }}"
 
 - name: Remove minion id.
   file:
