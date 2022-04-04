@@ -1,11 +1,11 @@
 ---
 - name: Download SaltStack
   get_url:
-    url: https://bootstrap.saltstack.com
+    url: https://bootstrap.saltproject.io
     dest: /tmp/bootstrap-salt.sh
 
 - name: Install SaltStack 
-  shell: "sh /tmp/bootstrap-salt.sh -P {{ salt_version }}"
+  shell: "sh /tmp/bootstrap-salt.sh -P -x python3 {{ salt_version }}"
 
 - name: Remove minion id.
   file:
@@ -23,3 +23,8 @@
     name: salt-minion
     state: stopped
     enabled: "{{ salt_enabled }}"
+
+- name: Downgrade Jinja2 due to incompatability issues salt has with python3.8
+  pip:
+    name:
+      - jinja2<=3.0.3
