@@ -1,7 +1,7 @@
 ---
 - name: Download SaltStack
   get_url:
-    url: https://bootstrap.saltproject.io -o install_salt.sh
+    url: https://bootstrap.saltproject.io
     dest: /tmp/bootstrap-salt.sh
 
 - name: Install SaltStack 
