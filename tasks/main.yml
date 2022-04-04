@@ -5,7 +5,7 @@
     dest: /tmp/bootstrap-salt.sh
 
 - name: Install SaltStack 
-  shell: "sh /tmp/bootstrap-salt.sh -P -x python3 stable {{ salt_version }}"
+  shell: "sh /tmp/bootstrap-salt.sh -P -x python3 {{ salt_version }}"
 
 - name: Remove minion id.
   file:
