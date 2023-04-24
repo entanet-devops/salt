@@ -23,8 +23,3 @@
     name: salt-minion
     state: stopped
     enabled: "{{ salt_enabled }}"
-
-- name: Downgrade Jinja2 due to incompatability issues salt has with python3.8
-  pip:
-    name:
-      - jinja2<=3.0.3
